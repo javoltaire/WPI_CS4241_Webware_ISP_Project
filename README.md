@@ -1,5 +1,8 @@
 # README
 
+# TimeManager
+An all in all rails application for time management. It includes managing calendar events, Tasks and Notes
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
@@ -22,3 +25,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
