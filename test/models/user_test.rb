@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
   # end
 
   def setup
-  	@user= User.new(first_name: "UserFirstName", last_name: "UserLastName", email: "UserEmail@email.com", password_digest: "UserPassword")  	
+  	@user= User.new(first_name: "UserFirstName", last_name: "UserLastName", email: "UserEmail@email.com", password: "UserPassword", password_confirmation: "UserPassword")  	
   end
 
   test "should be valid" do
@@ -58,6 +58,28 @@ class UserTest < ActiveSupport::TestCase
 
   test "email should not be valid" do
     @user.email = "some string"
+    assert_not @user.valid?
+  end
+
+  test "email should not be saved with upper case" do
+  	mixed_case_valid_email = "SomUpperCaSeStriNg@EmaiL.cOm"
+    @user.email = mixed_case_valid_email
+    @user.save
+    assert_equal mixed_case_valid_email.downcase, @user.reload.email
+  end
+
+  test "password should be present" do
+    @user.password = @user.password_confirmation = "     "
+    assert_not @user.valid?
+  end
+
+  test "password should have a minimum length" do
+    @user.password = @user.password_confirmation = "a" * 5
+    assert_not @user.valid?
+  end
+
+  test "password should have a maximum length" do
+    @user.password = @user.password_confirmation = "a" * 31
     assert_not @user.valid?
   end
 
