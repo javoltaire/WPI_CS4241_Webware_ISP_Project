@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
+  #The root/welcome rout
+  root 'sessions#new'
 
   #Signup
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   get '/profile' => 'users#edit'
   patch '/profile' => 'users#update'
-
-  #The root/welcome rout
-  root 'sessions#new'
 
   #login in and out
   get '/login' => 'sessions#new'
