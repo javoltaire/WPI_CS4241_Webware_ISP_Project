@@ -1,11 +1,10 @@
 !!!
 %html
-  %head
-    %title = yield(:title)
-    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
-    = stylesheet_link_tag    "application", media: "all", 'data-turbolinks-track': 'reload'
-    = javascript_include_tag "application", 'data-turbolinks-track': 'reload'
-    = csrf_meta_tags
-  %body
-    .container-fluid
-      = yield
+	%head
+		%title= yield(:title)
+		%meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
+		= stylesheet_link_tag    "application", media: "all", 'data-turbolinks-track': 'reload'
+		= javascript_include_tag "application", 'data-turbolinks-track': 'reload'
+		= csrf_meta_tags
+	%body
+		= yield

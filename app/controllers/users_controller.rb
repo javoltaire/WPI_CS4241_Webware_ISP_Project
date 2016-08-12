@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
-#   Will show the info of the user with the corresponding id
-  def show
-	  @user = User.find(params[:id])
-  end
+
 
 # Will get the page needed to create a new user
   def new
@@ -14,11 +11,23 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if(@user.save)
 			log_in @user
-		  render 'edit'
+		  redirect_to notes_path
   	else
   		render 'new'
   	end
   end
+
+
+
+
+
+
+
+
+
+
+
+  
 
   def edit
 	  @user = current_user
@@ -26,6 +35,11 @@ class UsersController < ApplicationController
 
   def update
 	  @user = current_user
+  end
+
+  #   Will show the info of the user with the corresponding id
+  def show
+    @user = User.find(params[:id])
   end
 
   private

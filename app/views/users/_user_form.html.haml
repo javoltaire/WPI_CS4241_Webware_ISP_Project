@@ -1,18 +1,14 @@
-= form_for(@user, url: yield(:url_path)) do |f|
-
-  = f.label :first_name
-  = f.text_field :first_name
-
-  = f.label :last_name
-  = f.text_field :last_name
-
-  = f.label :email 
-  = f.email_field :email 
-
-  = f.label :password 
-  = f.password_field :password 
-
-  = f.label :password_confirmation, "Confirm Password" 
-  = f.password_field :password_confirmation 
-
-  = f.submit yield(:button_text)
+= form_for(@user, url: yield(:url_path), :html => { :class => "form-vertical"}) do |f|
+  .form-group.row
+    .col-sm-6
+      = f.text_field :first_name, placeholder: "First Name", class: "form-control"
+    .col-sm-6
+      = f.text_field :last_name, placeholder: "Last Name", class: "form-control"
+  .form-group
+    = f.email_field :email, placeholder: "Email Address", class: "form-control"
+  .form-group
+    = f.password_field :password, placeholder: "Password", class: "form-control"
+  .form-group
+    = f.password_field :password_confirmation, placeholder: "Confirm password", class: "form-control"
+  .form-group
+    = f.submit yield(:button_text), class: "btn btn-default"

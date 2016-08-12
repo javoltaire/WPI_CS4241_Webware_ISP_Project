@@ -1,10 +1,13 @@
 - provide(:title, "Login")
-%h1 Log in
-%div
-  = form_for(:session, url: login_path) do |f|
-    = f.label :email
-    = f.email_field :email
-    = f.label :password
-    = f.password_field :password
-    = f.submit "Log in"
-    = link_to "Create Account", signup_path
+.container
+	%h1.text-center Logo here
+	%h1.text-center Log in
+	.text-center
+		= form_for(:session, url: login_path, :html => {:class => "form-vertical"}) do |f|
+			.form-group
+				= f.email_field :email, placeholder: "Email", class: "form-control"
+			.form-group
+				= f.password_field :password, placeholder: "Password", class: "form-control"
+			.form-group
+				= f.submit "Log in", class: "btn btn-default"
+			= link_to "Create Account", signup_path
