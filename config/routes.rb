@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'notes/index'
+
   #Signup
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
