@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-
   #The root/welcome rout
-  root 'sessions#new'
+  root 'welcome#index'
 
   #Signup
   get '/signup' => 'users#new'

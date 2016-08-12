@@ -50,4 +50,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #For haml
 gem 'haml'
 # for bootstrap
-#gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'autoprefixer-rails', '~> 6.4', '>= 6.4.0.1'
