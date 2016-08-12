@@ -1,0 +1,8 @@
+- provide(:title, "Sign Up")
+- provide(:button_text, "Create account")
+- provide(:url_path, signup_path)
+%h1 Sign Up
+%div
+  = render 'user_form'
+  %p
+    Have an account? #{link_to "Log in", login_path}.
