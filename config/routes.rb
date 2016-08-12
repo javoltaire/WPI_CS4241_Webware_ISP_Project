@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'notes/index'
-
   #Signup
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
@@ -15,6 +13,9 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+
+  #Notes
+  get '/notes' => 'notes#index'
 
 
 
