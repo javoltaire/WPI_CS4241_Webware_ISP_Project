@@ -8,12 +8,12 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to profile_path(user) 
     else
-      #Display error to user (do that in other places too)
+      flash[:danger] = "Incorrect Email/Password combination"
       render 'new'
     end
   end
 
-  def destroy
+  def destroy 
     log_out
     redirect_to root_url
   end

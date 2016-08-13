@@ -1,0 +1,7 @@
+-if @user.errors.any?
+  .error-container
+    .alert.alert-danger
+      = "#{pluralize(@user.errors.count, "error")} found, try again!"
+    %ul
+    - @user.errors.full_messages.each do |message|
+      %li= message
