@@ -1,5 +1,5 @@
 -if @user.errors.any?
-  .error-container
+  #error-container
     .alert.alert-danger
       = "#{pluralize(@user.errors.count, "error")} found, try again!"
     %ul
