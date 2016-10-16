@@ -1,6 +1,6 @@
 # README
 
-# TimeManager
+# Notes
 A simple Ruby on rails application where users can sign up login and create simple notes
 
 ================= Generated =================
