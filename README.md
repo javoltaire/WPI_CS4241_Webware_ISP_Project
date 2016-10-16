@@ -1,8 +1,9 @@
 # README
 
 # TimeManager
-An all in all rails application for time management. It includes managing calendar events, Tasks and Notes
+A simple Ruby on rails application where users can sign up login and create simple notes
 
+================= Generated =================
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
