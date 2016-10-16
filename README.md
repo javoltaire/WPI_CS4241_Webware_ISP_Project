@@ -4,6 +4,7 @@
 A simple Ruby on rails application where users can sign up login and create simple notes
 
 ================= Generated =================
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
